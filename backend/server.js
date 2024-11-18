@@ -4,7 +4,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import scheduleRoutes from "./routes/scheduleRoutes.js";
 import requestRoutes from "./routes/requestRoutes.js";
-// import employeeRoutes from "./routes/employeeRoutes.js";
+import employeeRoutes from "./routes/employeeRoutes.js";
 
 const app = express();
 app.use(express.json());
@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 3000;
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/schedule", scheduleRoutes);
 app.use("/api/v1/requests", requestRoutes);
-// app.use("/api/v1/employee", employeeRoutes);
+app.use("/api/v1/employee", employeeRoutes);
 
 // Home Route (GET request)
 app.get('/', (req, res) => {
